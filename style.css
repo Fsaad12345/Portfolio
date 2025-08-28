@@ -1,0 +1,659 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: #212121;
+  color: #fff;
+  display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    overflow: hidden;
+}
+/* === Global Section Spacing === */
+section {
+  padding: 80px 20px;   /* equal top & bottom spacing */
+  margin: 0 auto;
+}
+
+
+/* Loader Styles */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px); /* lets your background stay visible but blurred */
+  background: rgba(0,0,0,0.6); /* semi-transparent dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  flex-direction: column;
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader-content {
+  text-align: center;
+  color: white;
+}
+
+.loader-line {
+  margin-top: 10px;
+  height: 3px;
+  width: 0;
+  background: #00ff88;
+}
+
+
+
+
+
+.section-container {
+  max-width: 600px;
+  padding: 0 20px;
+  text-align: left;
+
+}
+
+
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #111;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.site-header .left,
+.site-header .center,
+.site-header .right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-header .left {
+  justify-content: flex-start;
+}
+
+.site-header .right {
+  justify-content: flex-end;
+}
+
+
+.logo {
+  font-weight: lighter;
+  color: white;
+  font-size: 1.5rem;
+}
+
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nav-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.nav-menu ul li a:hover {
+  color: #00ffcc;
+}
+
+.menu-toggle {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Hide menu initially */
+
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Hidden by default */
+  width: 250px;
+  height: 100vh;
+  background: #111;
+  padding: 80px 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.nav-menu.open {
+  display: block;
+}
+
+
+
+.hero-section {
+display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+.hero-content p{
+  font-size: 60px;
+  font-weight: 100;
+}
+
+.section-label {
+  color: #00ff88;
+  font-weight: lighter;
+  font-size: 0.7rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.focus-section {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* left align */
+  flex-direction: column;
+  text-align: left;
+  /* removed background so body color shows */
+}
+
+.focus-section .section-container {
+  max-width: 400px;
+ 
+}
+
+.focus-section .section-label {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+}
+
+ .divider {
+  width: 40px;
+  height: 1px;
+  background: #ffffff; /* thin subtle divider */
+  margin: 15px 0 30px 0;
+}
+
+.focus-section .focus-heading {
+ font-size: 1.5rem; /* matches h2 scale */
+  font-weight: 100;
+  line-height: 1.4;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.focus-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #aaa; /* lighter gray text */
+  margin-bottom: 25px;
+}
+
+.focus-section .highlight {
+  color: #fff;
+  font-weight: 600;
+}
+
+.business-logos {
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* 2 per row */
+  gap: 30px 0px; /* row gap 30px, column gap 40px */
+  margin-top: 30px;
+}
+
+.business-logos img {
+  max-height: 80px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.business-logos img:hover {
+  transform: scale(1.05);
+}
+
+
+.timeline {
+  position: relative;
+  margin-left: 0;
+  padding-left: 0;
+  border-left: none; 
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.timeline-content {
+  background: #111;
+  padding: 25px;
+  border-radius: 6px;
+  position: relative;
+  max-width: 300px;
+  margin-left: 0;
+}
+
+
+.timeline-content::before {
+  display: none;
+}
+
+.timeline-content h4 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #aaa;
+}
+
+.timeline-content .year {
+  margin-left: 10px;
+  font-weight: 400;
+  color: #aaa;
+}
+
+.timeline-content h5 {
+  font-size: 1.3rem; /* matches h3 scale */
+  font-weight: 100;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.timeline-content p {
+font-size: 1rem; 
+  line-height: 1.6;
+  color: #aaa;
+}
+.timeline-heading{
+  font-weight: 100;
+}
+
+.timeline-gif {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 6px; /* optional, to give it smooth edges */
+}
+
+
+.skills-list li {
+  margin-bottom: 30px;
+}
+
+/* === SOCIAL SECTION === */
+.social-section {/* dark like your screenshot */
+  color: #fff;
+  text-align: left;
+}
+
+
+.social-section .section-container {
+  max-width: 400px;
+
+}
+
+.social-section .section-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.social-section h2 {
+  font-size: 14px;
+  font-weight: 100;
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+
+.social-logos {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 40px; /* space between logos */
+}
+
+.social-logos a img {
+  max-width: 250px; /* slightly larger for LinkedIn/X */
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.social-logos a img:hover {
+  transform: scale(1.05);
+}
+
+
+.fixed-image {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  pointer-events: none; /* ✅ This lets scroll go through */
+  perspective: 1000px;
+}
+.fixed-image .hoverImage {
+  pointer-events: auto; /* re-enable interaction on the image */
+}
+
+.fixed-image img {
+  max-width: 90%;
+  max-height: 80%;
+  object-fit: contain;
+    pointer-events: none;
+}
+
+.hoverImage {
+  position: relative;
+  align-self: stretch;
+  height: 500px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 10px;
+  max-width: 100%;
+}
+/* style.css */
+
+/* ... (your existing CSS) ... */
+.hoverImageWrapper {
+  /* ... existing styles ... */
+  transition: transform 0.2s ease-out; /* Smooths the transition on hover */
+  transform-style: preserve-3d; /* Ensures child elements are also in 3D space */
+}
+
+.scroll-content {
+  margin-left: 50vw;
+  width: 50vw;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 2;
+  scroll-behavior: smooth;
+} 
+.lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+.line {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.line::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 15vh;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+  animation: drop 7s 0s infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
+.line:nth-child(1) {
+  margin-left: -25%;
+}
+
+.line:nth-child(1)::after {
+  animation-delay: 2s;
+}
+
+.line:nth-child(3) {
+  margin-left: 25%;
+}
+
+.line:nth-child(3)::after {
+  animation-delay: 2.5s;
+}
+
+@keyframes drop {
+  0% { top: -50%; }
+  100% { top: 110%; }
+}
+/* ===========================
+   RESPONSIVE DESIGN FIXES
+   =========================== */
+
+/* ======================
+   ✅ DEFAULT (Laptop/Desktop)
+   ====================== */
+/* Keep everything left-aligned like your original CSS */
+@media (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* scroll naturally */
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  /* === Global mobile section spacing === */
+  section {
+    padding: 60px 20px; /* equal spacing for all sections */
+  }
+
+  .section-label {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  h3 {
+    font-weight: 100;
+    margin-bottom: 30px; /* consistent gap after headings */
+  }
+
+  /* Hero section */
+  .hero-section {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+  }
+  .hero-content {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hero-content p {
+    font-size: 32px;
+    line-height: 1.4;
+  }
+
+  /* Focus section */
+  .focus-section,
+  .focus-section .section-container {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+  /* Businesses */
+/* Businesses (Mobile) */
+@media (max-width: 768px) {
+  .businesses-section {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .business-logos {
+    display: flex;
+    flex-direction: column; /* ✅ stack vertically */
+    align-items: center;    /* ✅ keep centered */
+    gap: 25px;              /* space between logos */
+  }
+
+  .business-logos img {
+    max-width: 200px; /* adjust size so they look balanced */
+    width: 100%;
+    height: auto;
+  }
+
+  .business-heading{
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Timeline */
+  .timeline {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .timeline-content {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 100%;
+  }
+  .timeline-heading {
+    font-weight: 100;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Skills */
+  .skills-list {
+    text-align: center;
+    padding: 0;
+  }
+  .skills-list li {
+    list-style: none;
+  }
+
+  /* Social */
+  .social-section,
+  .social-section .section-container {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .social-logos {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  /* Nav menu (full screen slide-in) */
+  .nav-menu {
+    left: -120%;
+    width: 100%;
+    text-align: center;
+    padding-top: 100px;
+  }
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  /* Disable fixed split layout */
+  .fixed-image,
+  .scroll-content {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .fixed-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: auto;
+    width: 100%;
+    top: 0;
+    max-width: 350px;
+    margin-bottom: 40px; /* spacing between image & content */
+  }
+  .fixed-image img {
+    max-width: 90%;
+    height: auto;
+    margin-top: 12vh; /* tighter spacing than 15vh */
+  }
+  .scroll-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  .divider {
+    margin: 15px auto 30px auto; /* auto centers horizontally */
+  }
+}
+
+/* Extra small phones (≤ 480px) */
+@media (max-width: 480px) {
+  .hero-content p {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+    .divider {
+    margin: 15px auto 30px auto; /* auto centers horizontally */
+  }
+  .business-logos {
+    grid-template-columns: repeat(2, 1fr); /* ✅ still two per row */
+    gap: 20px;
+  }
+  .business-logos img {
+    max-height: 60px;
+  }
+  .social-logos a img {
+    max-width: 150px;
+  } 
+} 
